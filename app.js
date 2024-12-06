@@ -19,8 +19,10 @@ for(i=0;i<AMOUNT_OF_SQUARES_COLUMN;i++){
     }
 }
 
-
+const newPadButton = document.querySelector("#new-pad-button")
 const squares = document.querySelectorAll(".square")
 squares.forEach((square) => {
     square.addEventListener("mouseover", () => square.style.backgroundColor ="black")
 })
+
+newPadButton.addEventListener("click",() => prompt())
