@@ -22,7 +22,7 @@ function createSketchPad(padSize){
     }
     const squares = document.querySelectorAll(".square")
     squares.forEach((square) => {
-        square.addEventListener("mouseover", () => square.style.backgroundColor ="black")
+        square.addEventListener("mouseover", () => square.style.backgroundColor = getRandomColor())
     })
 }
 function getGridSizeUserInput(){
@@ -36,9 +36,41 @@ function getGridSizeUserInput(){
 
 
 
+
 const newPadButton = document.querySelector("#new-pad-button")
 
+function getRandomColor(){
+    let result = "#"
+    for(i=0;i<6;i++){
+        let randomNumber = Math.floor(Math.random()*15)
+        if(randomNumber<10) 
+            result += randomNumber
+        else{
+            switch(randomNumber){
 
+            case 10: result += "A" 
+            break
+
+            case 11: result += "B" 
+            break
+
+            case 12: result += "C" 
+            break    
+
+            case 13: result += "D" 
+            break
+
+            case 14: result += "E" 
+            break
+
+            case 15: result += "F" 
+            break
+            }
+        }
+    }
+    console.log(result)
+    return result
+}
 
 
 newPadButton.addEventListener("click",() => getGridSizeUserInput())
