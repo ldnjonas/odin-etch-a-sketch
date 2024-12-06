@@ -19,3 +19,8 @@ for(i=0;i<AMOUNT_OF_SQUARES_COLUMN;i++){
     }
 }
 
+
+const squares = document.querySelectorAll(".square")
+squares.forEach((square) => {
+    square.addEventListener("mouseover", () => square.style.backgroundColor ="black")
+})
